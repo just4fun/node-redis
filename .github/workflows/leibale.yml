@@ -1,0 +1,52 @@
+name: Leibale
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_name:
+        required: true
+        type: string
+      arch:
+        required: false
+        type: string
+        default: x86_64
+      osnick:
+        required: true
+        type: string
+      target:
+        required: true
+        type: string
+      platform:
+        required: true
+        type: string
+      osname:
+        required: true
+        type: string
+      build_deps:
+        required: true
+        type: string
+      packaging_deps:
+        required: true
+        type: string
+      redisversion: 
+        required: false
+        type: string
+      pythonversion: 
+        required: false
+        type: string
+        default: 3.9
+      rubyversion:
+        required: false
+        type: string
+        default: 2.7.2
+      fpmversion:
+        required: false
+        type: string
+        default: 1.14.1
+        
+jobs:
+  build-redis:
+    name: leibale
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
