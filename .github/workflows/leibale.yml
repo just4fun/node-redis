@@ -2,6 +2,8 @@ name: Leibale
 
 
 on:
+  push:
+  
   workflow_dispatch:
     inputs:
       image_name:
